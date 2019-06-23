@@ -1,10 +1,15 @@
 package com.automationpractice.Testing.TestAutomation.stepDefinitions;
 
+import javax.naming.directory.SearchResult;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.automationpractice.Testing.TestAutomation.pages.HomeYourLogoPage;
+import com.automationpractice.Testing.TestAutomation.pages.ProductOverviewPage;
+import com.automationpractice.Testing.TestAutomation.pages.SearchResultsPage;
+import com.automationpractice.Testing.TestAutomation.validationPage.ShoppingCartSummary;
 
-import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -22,13 +27,14 @@ public class ProductToTheShoppingCartStepdefinitions {
 
 	@When("^I look for '(.*)' and select any for to go to shopping cart$")
 	public void iLookForDressAndSelectAny(String product) throws Throwable {
-//llamar el page escribe en el input y el que selecciona el producto , vamos hasta el carrito de compra
-		System.out.println(product);
+
 		PageGenerator.getInstance(HomeYourLogoPage.class, driver).findProduct(product);
+		PageGenerator.getInstance(SearchResultsPage.class, driver).chooseProduct();
+		PageGenerator.getInstance(ProductOverviewPage.class, driver).addToShoppingCart();
 	}
 
 	@Then("^in the shopping cart show the product is not '(.*)'$")
 	public void inTheShoppingCartShowTheProductIsNotNullWithQuantityNotNull() throws Throwable {
-//luego se verifica que el carrito de compra este lleno
+		PageGenerator.getInstance(ShoppingCartSummary.class, driver).validateTheShoppingCart();
 	}
 }

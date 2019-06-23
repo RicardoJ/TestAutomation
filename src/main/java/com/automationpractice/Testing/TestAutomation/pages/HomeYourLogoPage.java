@@ -18,14 +18,16 @@ public class HomeYourLogoPage extends BasePage{
     private WebElement inputSearch;
 
 
-	public void findProduct(String product) {
-		waitVisibility(inputSearch);
-		writeText(inputSearch, product);
-		inputSearch.submit();
-}
+
 	 public HomeYourLogoPage goToThePage(){
 
 	        driver.get(baseURL);
 	        return this;
 	    }
+
+		public void findProduct(String product) {
+			waitVisibility(inputSearch);
+			writeText(inputSearch, product);
+			inputSearch.submit();
+	}
 }

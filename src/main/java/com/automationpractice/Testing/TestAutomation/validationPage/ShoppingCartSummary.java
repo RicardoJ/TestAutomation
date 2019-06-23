@@ -6,8 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 import com.automationpractice.Testing.TestAutomation.pages.BasePage;
 
-import utils.TheResultInShoppingCart;
-
 public class ShoppingCartSummary extends BasePage{
 
 	@FindBy(xpath="//td[@class='cart_description']//p[@class='product-name']//a")
@@ -18,9 +16,8 @@ public class ShoppingCartSummary extends BasePage{
 
 	}
 
-	public void validateTheShoppingCart(WebElement element){
-		TheResultInShoppingCart result = new TheResultInShoppingCart(element);
-		result.exis(productInShoppingCart);
+	public void validateTheShoppingCart(){
+		exis(productInShoppingCart);
 
 	}
 

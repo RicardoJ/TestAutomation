@@ -5,17 +5,20 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SearchResultsPage extends BasePage {
-	int numeroRandom = (int) (Math.random() * 10)+1;
+	int numeroRandom = (int) (Math.random() * 7)+1;
 	public SearchResultsPage(WebDriver driver) {
 		super(driver);
+		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(id="product_list grid row")
+	@FindBy(className="product-name")
     public List< WebElement> products;
 
 	public void chooseProduct() {
+
 		click(products.get(numeroRandom));
 	}
 }

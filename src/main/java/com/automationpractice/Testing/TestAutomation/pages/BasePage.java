@@ -1,6 +1,5 @@
 package com.automationpractice.Testing.TestAutomation.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,5 +27,13 @@ public class BasePage {
 	        wait.until(ExpectedConditions.visibilityOf(element));
 	    }
 
+	 public String exis(WebElement element) {
 
+			if(!element.getText().isEmpty()) {
+				return "null";
+			}else
+			{
+				return element.getText();
+			}
+		}
 }
