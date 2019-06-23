@@ -10,10 +10,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SearchResultsPage extends BasePage {
 
-	@FindBy(className="product-name")
-    public List< WebElement> products;
+	@FindBy(className = "product-name")
+	public List<WebElement> products;
 
-	@FindBy(className="navigation_page")
+	@FindBy(className = "navigation_page")
 	public WebElement productList;
 
 	public SearchResultsPage(WebDriver driver) {
@@ -21,8 +21,7 @@ public class SearchResultsPage extends BasePage {
 		PageFactory.initElements(driver, this);
 	}
 
-
-	public void chooseProduct() {
+	public void chooseRandomProduct() {
 		waitVisibility(productList);
 		final int numberRandom = RandomUtils.nextInt(0, products.size());
 		click(products.get(numberRandom));

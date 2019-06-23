@@ -7,22 +7,22 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProductOverviewPage extends BasePage {
 
+	@FindBy(name = "Submit")
+	public WebElement buttonAddToCart;
+
+	@FindBy(xpath = "//a[@class='btn btn-default button button-medium']//span")
+	public WebElement buttonProceedToCheckout;
+
 	public ProductOverviewPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
-
 	}
 
-	@FindBy(name="Submit")
-    public WebElement buttonAddToCart;
-	@FindBy(xpath="//a[@class='btn btn-default button button-medium']//span")
-    public WebElement buttonProceedToCheckout;
-
 	public void addToShoppingCart() {
-	waitVisibility(buttonAddToCart);
-	click(buttonAddToCart);
-	waitVisibility(buttonProceedToCheckout);
-	click(buttonProceedToCheckout);
-}
+		waitVisibility(buttonAddToCart);
+		click(buttonAddToCart);
+		waitVisibility(buttonProceedToCheckout);
+		click(buttonProceedToCheckout);
+	}
 
 }
