@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomeYourLogoPage extends BasePage {
-	String baseURL = "http://automationpractice.com/index.php";
+	private String baseURL = "http://automationpractice.com/index.php";
 
 	@FindBy(id = "search_query_top")
 	private WebElement inputSearch;
