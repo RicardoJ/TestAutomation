@@ -14,28 +14,25 @@ public class BasePage {
 		wait = new WebDriverWait(driver, 10);
 	}
 
-
 	public void click(WebElement element) {
-	element.click();
+		element.click();
 	}
+
 	public void writeText(WebElement element, String word) {
-
 		element.sendKeys(word);
-
 	}
-	 public void waitVisibility(WebElement element) {
-	        wait.until(ExpectedConditions.visibilityOf(element));
-	    }
 
-	 public String exist(WebElement element) {
+	public void waitVisibility(WebElement element) {
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
 
-			if(!element.getText().isEmpty()) {
-				return "null";
-			}else
-			{
-				return element.getText();
-			}
+	public String exists(WebElement element) {
+		waitVisibility(element);
+		if (element.getText().isEmpty()) {
+			return element.getText();
+		} else {
+			return "null";
 		}
-
+	}
 
 }
