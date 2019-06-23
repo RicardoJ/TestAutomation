@@ -17,7 +17,7 @@ public class ShoppingCartSummary extends BasePage{
 	}
 
 	public String validateTheShoppingCart(){
-		waitVisibility(productInShoppingCart);
+
 		return exist(productInShoppingCart);
 
 	}

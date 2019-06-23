@@ -2,10 +2,9 @@ package com.automationpractice.Testing.TestAutomation.stepDefinitions;
 
 import static org.junit.Assert.assertEquals;
 
-import javax.naming.directory.SearchResult;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import com.automationpractice.Testing.TestAutomation.pages.HomeYourLogoPage;
 import com.automationpractice.Testing.TestAutomation.pages.ProductOverviewPage;
@@ -37,7 +36,8 @@ public class ProductToTheShoppingCartStepdefinitions {
 
 	@Then("^in the shopping cart show the product is not '(.*)'$")
 	public void inTheShoppingCartShowTheProductIsNotNullWithQuantityNotNull(String result) throws Throwable {
-
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		assertEquals(result, PageGenerator.getInstance(ShoppingCartSummary.class, driver).validateTheShoppingCart());
+
 	}
 }
