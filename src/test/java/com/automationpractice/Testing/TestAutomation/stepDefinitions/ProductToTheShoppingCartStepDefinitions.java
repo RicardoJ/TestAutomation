@@ -16,7 +16,7 @@ import utils.PageGenerator;
 
 public class ProductToTheShoppingCartStepDefinitions {
 
-	WebDriver driver = Hook.getDriver();
+	protected WebDriver driver = Hook.getDriver();
 
 	@Given("^that I opened the browser at Your Logo page$")
 	public void thatIOpenedBrowserAtYourLogo() throws Throwable {
