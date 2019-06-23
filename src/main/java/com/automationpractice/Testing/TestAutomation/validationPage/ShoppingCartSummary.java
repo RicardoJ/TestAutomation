@@ -16,8 +16,9 @@ public class ShoppingCartSummary extends BasePage{
 
 	}
 
-	public void validateTheShoppingCart(){
-		exis(productInShoppingCart);
+	public String validateTheShoppingCart(){
+		waitVisibility(productInShoppingCart);
+		return exist(productInShoppingCart);
 
 	}
 

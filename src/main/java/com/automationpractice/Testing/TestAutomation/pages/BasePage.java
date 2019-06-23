@@ -27,7 +27,7 @@ public class BasePage {
 	        wait.until(ExpectedConditions.visibilityOf(element));
 	    }
 
-	 public String exis(WebElement element) {
+	 public String exist(WebElement element) {
 
 			if(!element.getText().isEmpty()) {
 				return "null";
@@ -36,4 +36,6 @@ public class BasePage {
 				return element.getText();
 			}
 		}
+
+
 }

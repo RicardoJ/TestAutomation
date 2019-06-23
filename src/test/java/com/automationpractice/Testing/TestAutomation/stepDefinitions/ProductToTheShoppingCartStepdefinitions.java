@@ -1,5 +1,7 @@
 package com.automationpractice.Testing.TestAutomation.stepDefinitions;
 
+import static org.junit.Assert.assertEquals;
+
 import javax.naming.directory.SearchResult;
 
 import org.openqa.selenium.WebDriver;
@@ -34,7 +36,8 @@ public class ProductToTheShoppingCartStepdefinitions {
 	}
 
 	@Then("^in the shopping cart show the product is not '(.*)'$")
-	public void inTheShoppingCartShowTheProductIsNotNullWithQuantityNotNull() throws Throwable {
-		PageGenerator.getInstance(ShoppingCartSummary.class, driver).validateTheShoppingCart();
+	public void inTheShoppingCartShowTheProductIsNotNullWithQuantityNotNull(String result) throws Throwable {
+
+		assertEquals(result, PageGenerator.getInstance(ShoppingCartSummary.class, driver).validateTheShoppingCart());
 	}
 }
