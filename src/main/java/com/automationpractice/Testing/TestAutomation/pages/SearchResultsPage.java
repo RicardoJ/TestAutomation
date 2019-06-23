@@ -11,10 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 public class SearchResultsPage extends BasePage {
 
 	@FindBy(className = "product-name")
-	public List<WebElement> products;
+	private List<WebElement> products;
 
 	@FindBy(className = "navigation_page")
-	public WebElement productList;
+	private WebElement productList;
 
 	public SearchResultsPage(WebDriver driver) {
 		super(driver);

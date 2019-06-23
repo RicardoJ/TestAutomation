@@ -18,8 +18,8 @@ public class ProductToTheShoppingCartStepDefinitions {
 
 	protected WebDriver driver = Hook.getDriver();
 
-	@Given("^that I opened the browser at Your Logo page$")
-	public void thatIOpenedBrowserAtYourLogo() throws Throwable {
+	@Given("^that I opened the browser at automationpractice page$")
+	public void thatIOpenedBrowserAtAutomationpracticePage() throws Throwable {
 
 		PageGenerator.getInstance(HomeYourLogoPage.class, driver).goToThePage();
 	}
