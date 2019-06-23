@@ -1,7 +1,5 @@
 package com.automationpractice.Testing.TestAutomation.stepDefinitions;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -11,10 +9,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hook {
 
+	private static WebDriver driver;
 
-	 private static WebDriver driver;
-
-	    public static WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver;
 	}
 
@@ -22,19 +19,17 @@ public class Hook {
 		Hook.driver = driver;
 	}
 
-		@Before
-	    public static void setupClass() {
-	        WebDriverManager.chromedriver().setup();
-	        driver = new ChromeDriver();
-	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	        driver.manage().window().maximize();
-	    }
+	@Before
+	public static void setupClass() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+	}
 
-
-	    @After
-	    public void teardown() {
-	        if (driver != null) {
-	            driver.quit();
-	        }
-	    }
+	@After
+	public void teardown() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 }
